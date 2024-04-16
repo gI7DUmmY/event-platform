@@ -4,10 +4,11 @@ import { Button } from '../ui/button'
 import { loadStripe } from '@stripe/stripe-js'
 import { useEffect } from 'react'
 import { checkoutOrder } from '@/lib/actions/order.actions'
+import { Event } from '@/types'
 
 loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
-const Checkout = ({ event, userId }: { event: IEvent; userId: string }) => {
+const Checkout = ({ event, userId }: { event: Event; userId: string }) => {
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search)

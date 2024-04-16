@@ -1,12 +1,12 @@
 'use client'
 
-import { IEvent } from '@/lib/database/models/event.model'
 import { SignedIn, SignedOut, useUser } from '@clerk/nextjs'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import Checkout from './Checkout'
+import { Event } from '@/types'
 
-const CheckouButton = ({ event }: { event: IEvent }) => {
+const CheckouButton = ({ event }: { event: Event }) => {
   const { user } = useUser()
   const userId = user?.publicMetadata.userId as string
 
